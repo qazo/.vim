@@ -107,7 +107,7 @@ vnoremap <LEADER>s :sort<CR>
 vnoremap <LEADER>y "+y
 "}}}
 " vim-airline plugin {{{
-"let g:airline_theme = 'pencil'
+let g:airline_theme = 'papercolor'
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
