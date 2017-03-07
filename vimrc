@@ -40,7 +40,7 @@ set backspace=indent,eol,start       " Allow backspacing over everything in inse
 set cindent                          " c-style indentation
 set noshelltemp                      " not temp files for shell commands
 "set cursorcolumn                     " highlight cursor column
-set cursorline                       " highligh cursor line
+"set cursorline                       " highligh cursor line
 set encoding=utf-8                   " vim encoding to UTF-8
 set fileencoding=utf-8               " file encoding to UTF-8
 set foldmethod=marker                " set fold method to match file type
@@ -55,7 +55,7 @@ set nofoldenable                     " open folds by default
 set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
 set number                           " show line numbers
-set relativenumber                   " show relative line numbers in hybrid mode
+"set relativenumber                   " show relative line numbers in hybrid mode
 set ruler                            " show cursor position
 set scrolloff=5                      " make last\fisrt 5 lines visible when scrolling
 set sessionoptions-=folds            " don't save folds to session file

@@ -1,4 +1,3 @@
-colorscheme Benokai        " gvim colour scheme
 set background=dark         " light background
 set guioptions-=T             " remove toolbar from gui
 set guioptions-=L             " remove left scrollbar from gui
