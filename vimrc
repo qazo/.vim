@@ -79,12 +79,10 @@ autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
 " }}}
 " Keyboard mappings {{{
 inoremap <F2> <ESC>:write<CR>
-inoremap <silent><F7> <ESC>:silent make<CR>
 inoremap <S-F7> <ESC>:make<CR>
+inoremap <silent><F7> <ESC>:silent make<CR>
 nnoremap <DOWN> ddp
 nnoremap <F2> :write<CR>
-nnoremap <silent><F7> :silent make<CR>
-nnoremap <S-F7> :make<CR>
 nnoremap <LEADER>A Ea
 nnoremap <LEADER>I Bi
 nnoremap <LEADER>O O<ESC>j
@@ -97,12 +95,15 @@ nnoremap <LEADER>p "+p
 nnoremap <LEADER>y "+y
 nnoremap <LEFT> <<
 nnoremap <RIGHT> >>
+nnoremap <S-F7> :make<CR>
 nnoremap <S-TAB> :bprevious<CR>
 nnoremap <TAB> :bnext<CR>
 nnoremap <UP> ddkP
 nnoremap <silent><F3> :set relativenumber!<CR>
 nnoremap <silent><F4> :set list!<CR>
+nnoremap <silent><F7> :silent make<CR>
 nnoremap <silent><LEADER>n :nohl<CR>
+nnoremap Q @@
 vnoremap <LEADER>P "+P
 vnoremap <LEADER>Y "+Y
 vnoremap <LEADER>p "+p
