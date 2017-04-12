@@ -64,7 +64,7 @@ function! completor#trigger(msg)
     setlocal completeopt+=noselect
   endif
   if get(g:, 'completor_auto_trigger', 1)
-    call feedkeys("\<C-x>\<C-u>\<C-p>", 'n')
+    call feedkeys("\<Plug>CompletorTrigger")
   endif
 endfunction
 
@@ -142,6 +142,9 @@ function! s:set_events()
     autocmd!
     autocmd TextChangedI * call s:on_text_change()
     autocmd InsertCharPre * call s:on_insert_char_pre()
+    if get(g:, 'completor_auto_close_doc', 1)
+      autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+    endif
   augroup END
   call completor#utils#setup_python()
 endfunction
@@ -156,11 +159,8 @@ function! completor#enable()
   if &diff
     return
   endif
-
-  if get(g:, 'completor_auto_close_doc', 1)
-    autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-  endif
-
+  noremap  <silent> <Plug>CompletorTrigger <nop>
+  inoremap <silent> <Plug>CompletorTrigger <c-x><c-u><c-p>
   call s:set_events()
 endfunction
 
