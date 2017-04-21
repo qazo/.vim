@@ -31,6 +31,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/vim-scripts/nginx.vim'
 Plug 'https://github.com/vim-utils/vim-man'
 Plug 'https://github.com/w0rp/ale'
+Plug 'https://github.com/davisdude/vim-love-docs'
 call plug#end()
 
 " fundamentals {{{
@@ -46,6 +47,10 @@ set noshelltemp                      " not temp files for shell commands
 "set cursorline                       " highligh cursor line
 set encoding=utf-8                   " vim encoding to UTF-8
 set fileencoding=utf-8               " file encoding to UTF-8
+if has('win32')
+	set fileformat=unix              " default to unix-style line endings
+	set fileformats=unix,dos         " preffer unix style line endings
+endif
 set foldmethod=marker                " set fold method to match file type
 set hlsearch                         " highlight searches
 set ignorecase                       " ingore case of search term
@@ -96,8 +101,8 @@ nnoremap <LEADER>y "+y
 nnoremap <LEFT> <<
 nnoremap <RIGHT> >>
 nnoremap <S-F7> :make<CR>
-nnoremap <S-TAB> :bprevious<CR>
-nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :tabnext<CR>
+nnoremap <TAB> :tabprevious<CR>
 nnoremap <UP> ddkP
 nnoremap <silent><F3> :set relativenumber!<CR>
 nnoremap <silent><F4> :set list!<CR>
@@ -131,6 +136,10 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extentions#ale#enabled = 1
 "}}}
+" vim-ale plugin {{{
+let g:ale_c_gcc_options='-std=c11 -Wall -Wextra -Wpedantic'
+let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'
+" }}}
 " vim NERDTree plugin {{{
 nnoremap <F1> :NERDTreeToggle<CR>
 inoremap <F1> <ESC>:NERDTreeToggle<CR>
