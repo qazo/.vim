@@ -107,6 +107,7 @@ nnoremap <silent><F4> :set list!<CR>
 nnoremap <silent><F7> :silent make<CR>
 nnoremap <silent><LEADER>n :nohl<CR>
 nnoremap Q @@
+nnoremap <LEADER>d :b#<bar>bd#<CR>
 vnoremap <LEADER>P "+P
 vnoremap <LEADER>Y "+Y
 vnoremap <LEADER>p "+p
