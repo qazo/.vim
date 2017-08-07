@@ -14,5 +14,5 @@ if has('win32')
 	"set guifont=ProggySquareTT:h12:cANSI
 	set guifont=Terminus\ (TTF):h12,Consolas:h10
 else
-	set guifont=Monospace\ 9
+	set guifont=Monospace\ 10
 endif
