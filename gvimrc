@@ -1,9 +1,9 @@
-set background=dark         " light background
-set guioptions-=T             " remove toolbar from gui
-set guioptions-=L             " remove left scrollbar from gui
-set guioptions-=e             " use nice terminal-style tabs
-"set guioptions-=m            " remove menu bar, now wee'z 1337
-"set guioptions-=r            " remove right scroll bar
+set background=dark
+set guioptions-=T
+set guioptions-=L
+set guioptions-=e
+"set guioptions-=m
+"set guioptions-=r
 
 set lines=40
 set columns=120
