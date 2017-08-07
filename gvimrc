@@ -8,7 +8,7 @@ set guioptions-=e
 set lines=40
 set columns=120
 
-if has('win32')               " set the gui font
+if has('win32')
 	"set guifont=Lucida_Console:h9
 	"set guifont=Consolas:h10
 	"set guifont=ProggySquareTT:h12:cANSI
