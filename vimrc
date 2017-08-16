@@ -138,6 +138,8 @@ let g:airline#extentions#ale#enabled = 1
 " vim-ale plugin {{{
 let g:ale_c_gcc_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'
+let g:ale_cpp_gcc_options='-std=c++14 -Wall -Wextra -Wpedantic'
+let g:ale_cpp_clang_options='-std=c++14 -Wall -Wextra -Wpedantic'
 " }}}
 " vim NERDTree plugin {{{
 nnoremap <F1> :NERDTreeToggle<CR>
