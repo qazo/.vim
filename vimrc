@@ -38,6 +38,9 @@ call plug#end()
 syntax on                            " turn on syntax highlighting
 filetype on                          " filetype detection
 filetype plugin indent on            " plugins and indentation based on filetype
+if has('termguicolors')
+	set termguicolors                " 24bit colors on terminal
+endif
 colorscheme PaperColor               " nice colorscheme
 set background=light                 " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
