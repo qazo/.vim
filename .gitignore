@@ -1,5 +1,6 @@
 bundle/
 spell/
 view/
+persist/
 autoload/plug.vim.old
 .netrwhist
