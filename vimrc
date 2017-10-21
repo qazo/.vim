@@ -51,16 +51,19 @@ if !isdirectory(s:backupdir)         " backupdir in (~/.vim|~/vimfiles)/persist/
 	call mkdir(s:backupdir, 'p')
 endif
 let &backupdir = s:backupdir
+unlet s:backupdir
 
 if !isdirectory(s:undodir)           " undodir in (~/.vim|~/vimfiles)/persist/undo
 	call mkdir(s:undodir, 'p')
 endif
 let &undodir = s:undodir
+unlet s:undodir
 
 if !isdirectory(s:swapdir)           " swap-file directory in (~/.vim|/vimfiles)/persist/undo
 	call mkdir(s:swapdir, 'p')
 endif
 let &directory = s:swapdir
+unlet s:swapdir
 
 colorscheme PaperColor               " nice colorscheme
 set background=light                 " light background
