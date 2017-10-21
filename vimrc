@@ -3,25 +3,30 @@
 
 let mapleader=" "
 nnoremap <SPACE> <NOP>
-call plug#begin(split(&runtimepath, ',')[0] . '/bundle')
+let s:confdir = split(&runtimepath, ',')[0]
+let s:undodir = s:confdir . '/persist/undo'
+let s:backupdir = s:confdir . '/persist/backup'
+let s:swapdir = s:confdir . '/persist/swap'
+
+call plug#begin(s:confdir . '/bundle')
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/bling/vim-bufferline'
 Plug 'https://github.com/bronson/vim-trailing-whitespace'
-Plug 'https://github.com/cespare/vim-toml'
+Plug 'https://github.com/cespare/vim-toml', {'for': 'toml'}
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/danro/rename.vim'
-Plug 'https://github.com/davisdude/vim-love-docs'
-Plug 'https://github.com/fatih/vim-go'
-Plug 'https://github.com/lifepillar/pgsql.vim'
+Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
+Plug 'https://github.com/fatih/vim-go', {'for': 'go'}
+Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
 Plug 'https://github.com/maralla/completor.vim'
-Plug 'https://github.com/martingms/vipsql'
+Plug 'https://github.com/martingms/vipsql', {'for': ['sql', 'psql', 'pgsql']}
 Plug 'https://github.com/mcandre/Benokai'
 Plug 'https://github.com/owickstrom/vim-colors-paramount'
-Plug 'https://github.com/rust-lang/rust.vim'
+Plug 'https://github.com/rust-lang/rust.vim', {'for': ['rs', 'rust']}
 Plug 'https://github.com/scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'https://github.com/summivox/vim-nfo'
-Plug 'https://github.com/tbastos/vim-lua'
+Plug 'https://github.com/summivox/vim-nfo', {'for': 'nfo'}
+Plug 'https://github.com/tbastos/vim-lua', {'for': 'lua'}
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-repeat'
@@ -41,6 +46,22 @@ filetype plugin indent on            " plugins and indentation based on filetype
 if has('termguicolors')
 	set termguicolors                " 24bit colors on terminal
 endif
+
+if !isdirectory(s:backupdir)         " backupdir in (~/.vim|~/vimfiles)/persist/backup
+	call mkdir(s:backupdir, 'p')
+endif
+let &backupdir = s:backupdir
+
+if !isdirectory(s:undodir)           " undodir in (~/.vim|~/vimfiles)/persist/undo
+	call mkdir(s:undodir, 'p')
+endif
+let &undodir = s:undodir
+
+if !isdirectory(s:swapdir)           " swap-file directory in (~/.vim|/vimfiles)/persist/undo
+	call mkdir(s:swapdir, 'p')
+endif
+let &directory = s:swapdir
+
 colorscheme PaperColor               " nice colorscheme
 set background=light                 " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
@@ -61,9 +82,9 @@ set incsearch                        " do incremental searching
 set laststatus=2                     " always show statusline
 set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
-set nobackup                         " do not create backup files
+"set nobackup                         " do not create backup files
 set nofoldenable                     " open folds by default
-set noswapfile                       " turn off that annoying backup option
+"set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
 set number                           " show line numbers
 "set relativenumber                   " show relative line numbers in hybrid mode
@@ -119,6 +140,8 @@ vnoremap <LEADER>p "+p
 vnoremap <LEADER>s :sort<CR>
 vnoremap <LEADER>y "+y
 "}}}
+
+let g:completor_debug = 1
 " vim-airline plugin {{{
 let g:airline_theme = 'papercolor'
 if !exists('g:airline_symbols')
