@@ -18,6 +18,7 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
 Plug 'https://github.com/fatih/vim-go', {'for': 'go'}
+Plug 'https://github.com/joonty/vim-do'
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
 Plug 'https://github.com/maralla/completor.vim'
 Plug 'https://github.com/martingms/vipsql', {'for': ['sql', 'psql', 'pgsql']}
