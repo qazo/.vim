@@ -38,15 +38,19 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/vim-scripts/nginx.vim'
 Plug 'https://github.com/vim-utils/vim-man'
 Plug 'https://github.com/w0rp/ale'
+
+" May install later
+"Plug 'https://github.com/haya14busa/incsearch.vim'
+"Plug 'https://github.com/lifepillar/vim-mucomplete'
 call plug#end()
 
 " fundamentals {{{
 syntax on                            " turn on syntax highlighting
 filetype on                          " filetype detection
 filetype plugin indent on            " plugins and indentation based on filetype
-if has('termguicolors')
-	set termguicolors                " 24bit colors on terminal
-endif
+"if has('termguicolors')
+"	set termguicolors                " 24bit colors on terminal
+"endif
 
 if !isdirectory(s:backupdir)         " backupdir in (~/.vim|~/vimfiles)/persist/backup
 	call mkdir(s:backupdir, 'p')
