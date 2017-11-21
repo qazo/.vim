@@ -7,6 +7,7 @@ let s:confdir = split(&runtimepath, ',')[0]
 let s:undodir = s:confdir . '/persist/undo'
 let s:backupdir = s:confdir . '/persist/backup'
 
+" plug.vim {{{
 call plug#begin(s:confdir . '/bundle')
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 Plug 'https://github.com/airblade/vim-gitgutter'
@@ -41,6 +42,7 @@ Plug 'https://github.com/w0rp/ale'
 " May install later
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
 call plug#end()
+" }}}
 
 " fundamentals {{{
 syntax on                            " turn on syntax highlighting
