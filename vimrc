@@ -6,7 +6,6 @@ nnoremap <SPACE> <NOP>
 let s:confdir = split(&runtimepath, ',')[0]
 let s:undodir = s:confdir . '/persist/undo'
 let s:backupdir = s:confdir . '/persist/backup'
-let s:swapdir = s:confdir . '/persist/swap'
 
 call plug#begin(s:confdir . '/bundle')
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
@@ -40,7 +39,6 @@ Plug 'https://github.com/vim-utils/vim-man'
 Plug 'https://github.com/w0rp/ale'
 
 " May install later
-"Plug 'https://github.com/haya14busa/incsearch.vim'
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
 call plug#end()
 
@@ -64,12 +62,6 @@ endif
 let &undodir = s:undodir
 unlet s:undodir
 
-if !isdirectory(s:swapdir)           " swap-file directory in (~/.vim|/vimfiles)/persist/undo
-	call mkdir(s:swapdir, 'p')
-endif
-let &directory = s:swapdir
-unlet s:swapdir
-
 colorscheme PaperColor               " nice colorscheme
 set background=light                 " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
@@ -92,7 +84,7 @@ set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
 "set nobackup                         " do not create backup files
 set nofoldenable                     " open folds by default
-"set noswapfile                       " turn off that annoying backup option
+set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
 set number                           " show line numbers
 "set relativenumber                   " show relative line numbers in hybrid mode
