@@ -44,7 +44,6 @@ call plug#end()
 
 " fundamentals {{{
 syntax on                            " turn on syntax highlighting
-filetype on                          " filetype detection
 filetype plugin indent on            " plugins and indentation based on filetype
 "if has('termguicolors')
 "	set termguicolors                " 24bit colors on terminal
