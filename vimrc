@@ -140,7 +140,6 @@ vnoremap <LEADER>s :sort<CR>
 vnoremap <LEADER>y "+y
 "}}}
 
-let g:completor_debug = 1
 " vim-airline plugin {{{
 let g:airline_theme = 'papercolor'
 if !exists('g:airline_symbols')
@@ -163,6 +162,8 @@ let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extentions#ale#enabled = 1
 "}}}
 " vim-ale plugin {{{
+let g:ale_sign_error='*'
+let g:ale_sign_warning='-'
 let g:ale_c_gcc_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_cpp_gcc_options='-std=c++14 -Wall -Wextra -Wpedantic'
