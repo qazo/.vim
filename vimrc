@@ -1,7 +1,7 @@
 " vimrc file
 " Author: Kwezilomso Mhaga <kwezimhaga@live.com>
 
-let mapleader=" "
+let g:mapleader=' '
 nnoremap <SPACE> <NOP>
 let s:confdir = split(&runtimepath, ',')[0]
 let s:undodir = s:confdir . '/persist/undo'
@@ -164,8 +164,8 @@ let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extentions#ale#enabled = 1
 "}}}
 " vim-ale plugin {{{
-let g:ale_sign_error='*'
-let g:ale_sign_warning='-'
+" let g:ale_sign_error='*'
+" let g:ale_sign_warning='-'
 let g:ale_sign_column_always=1
 let g:ale_c_gcc_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'
