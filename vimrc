@@ -5,7 +5,6 @@ let g:mapleader=' '
 nnoremap <SPACE> <NOP>
 let s:confdir = split(&runtimepath, ',')[0]
 let s:undodir = s:confdir . '/persist/undo'
-let s:backupdir = s:confdir . '/persist/backup'
 
 " plug.vim {{{
 call plug#begin(s:confdir . '/bundle')
@@ -51,12 +50,6 @@ filetype plugin indent on            " plugins and indentation based on filetype
 "	set termguicolors                " 24bit colors on terminal
 "endif
 
-if !isdirectory(s:backupdir)         " backupdir in (~/.vim|~/vimfiles)/persist/backup
-	call mkdir(s:backupdir, 'p')
-endif
-let &backupdir = s:backupdir
-unlet s:backupdir
-
 if !isdirectory(s:undodir)           " undodir in (~/.vim|~/vimfiles)/persist/undo
 	call mkdir(s:undodir, 'p')
 endif
@@ -82,6 +75,8 @@ set incsearch                        " do incremental searching
 set laststatus=2                     " always show statusline
 set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
+set nobackup                         " somehow backup is set (can't grep source)
+set nowritebackup
 set nofoldenable                     " open folds by default
 set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
