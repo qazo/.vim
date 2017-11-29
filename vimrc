@@ -64,13 +64,12 @@ let &undodir = s:undodir
 unlet s:undodir
 
 colorscheme PaperColor               " nice colorscheme
-set background=light                 " light background
+"set background=light                 " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
 set cindent                          " c-style indentation
 set noshelltemp                      " not temp files for shell commands
-"set cursorcolumn                     " highlight cursor column
-"set cursorline                       " highligh cursor line
 set encoding=utf-8                   " vim encoding to UTF-8
+scriptencoding utf-8
 set fileencoding=utf-8               " file encoding to UTF-8
 if has('win32')
 	set fileformat=unix              " default to unix-style line endings
@@ -83,12 +82,10 @@ set incsearch                        " do incremental searching
 set laststatus=2                     " always show statusline
 set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
-"set nobackup                         " do not create backup files
 set nofoldenable                     " open folds by default
 set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
 set number                           " show line numbers
-"set relativenumber                   " show relative line numbers in hybrid mode
 set ruler                            " show cursor position
 set scrolloff=5                      " make last\fisrt 5 lines visible when scrolling
 set sessionoptions-=folds            " don't save folds to session file
@@ -107,39 +104,38 @@ let g:sql_type_default = 'pgsql'
 " Auto commands {{{
 autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
 " }}}
+
 " Keyboard mappings {{{
-inoremap <F2> <ESC>:write<CR>
-inoremap <S-F7> <ESC>:make<CR>
-inoremap <silent><F7> <ESC>:silent make<CR>
-nnoremap <DOWN> ddp
+inoremap <F2> <Esc>:write<CR>
+inoremap <s-f7> <Esc>:make<CR>
+inoremap <silent><F7> <Esc>:silent make<CR>
 nnoremap <F2> :write<CR>
-nnoremap <LEADER>A Ea
-nnoremap <LEADER>I Bi
-nnoremap <LEADER>O O<ESC>j
-nnoremap <LEADER>P "+P
-nnoremap <LEADER>Y "+Y
-nnoremap <LEADER>a ea
-nnoremap <LEADER>i bi
-nnoremap <LEADER>o o<ESC>k
-nnoremap <LEADER>p "+p
-nnoremap <LEADER>y "+y
-nnoremap <LEFT> <<
-nnoremap <RIGHT> >>
+nnoremap <Leader>A Ea
+nnoremap <Leader>I Bi
+nnoremap <Leader>O O<Esc>j
+nnoremap <Leader>P "+P
+nnoremap <Leader>Y "+Y
+nnoremap <Leader>a ea
+nnoremap <Leader>b :buffer<Space>
+nnoremap <Leader>i bi
+nnoremap <Leader>o o<Esc>k
+nnoremap <Leader>p "+p
+nnoremap <Leader>y "+y
+nnoremap <Left> <<
+nnoremap <Right> >>
 nnoremap <S-F7> :make<CR>
-nnoremap <S-TAB> :tabnext<CR>
-nnoremap <TAB> :tabprevious<CR>
-nnoremap <UP> ddkP
-nnoremap <silent><F3> :set relativenumber!<CR>
+nnoremap <S-Tab> :tabnext<CR>
+nnoremap <Tab> :tabprevious<CR>
 nnoremap <silent><F4> :set list!<CR>
 nnoremap <silent><F7> :silent make<CR>
-nnoremap <silent><LEADER>n :nohl<CR>
+nnoremap <silent><Leader>n :nohl<CR>
 nnoremap Q @@
-nnoremap <LEADER>d :b#<bar>bd#<CR>
-vnoremap <LEADER>P "+P
-vnoremap <LEADER>Y "+Y
-vnoremap <LEADER>p "+p
-vnoremap <LEADER>s :sort<CR>
-vnoremap <LEADER>y "+y
+nnoremap <Leader>d :b#<Bar>bd#<CR>
+vnoremap <Leader>P "+P
+vnoremap <Leader>Y "+Y
+vnoremap <Leader>p "+p
+vnoremap <Leader>s :sort<CR>
+vnoremap <Leader>y "+y
 "}}}
 
 " vim-airline plugin {{{
@@ -151,21 +147,29 @@ let g:airline_left_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_sep = ''
-let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extentions#ale#enabled = 1
+let g:airline_mode_map = {
+	\ '__' : '-',
+	\ 'n'  : 'N',
+	\ 'i'  : 'I',
+	\ 'R'  : 'R',
+	\ 'c'  : 'C',
+	\ 'v'  : 'V',
+	\ 'V'  : 'V',
+	\ '' : 'V',
+	\ 's'  : 'S',
+	\ 'S'  : 'S',
+	\ '' : 'S',
+	\ }
 "}}}
 " vim-ale plugin {{{
-" let g:ale_sign_error='*'
-" let g:ale_sign_warning='-'
 let g:ale_sign_column_always=1
 let g:ale_c_gcc_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'

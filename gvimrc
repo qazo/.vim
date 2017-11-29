@@ -1,4 +1,3 @@
-set background=dark
 set guioptions-=T
 set guioptions-=L
 set guioptions-=e
@@ -14,5 +13,5 @@ if has('win32')
 	"set guifont=ProggySquareTT:h12:cANSI
 	set guifont=Terminus\ (TTF):h12,Consolas:h10
 else
-	set guifont=Monospace\ 10
+	set guifont=Terminus\ 10
 endif
