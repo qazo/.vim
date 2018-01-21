@@ -16,6 +16,7 @@ Plug 'https://github.com/cespare/vim-toml', {'for': 'toml'}
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
+Plug 'https://github.com/dracula/vim'
 Plug 'https://github.com/fatih/vim-go', {'for': 'go'}
 Plug 'https://github.com/joonty/vim-do'
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
@@ -32,12 +33,12 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-unimpaired'
-Plug 'https://github.com/xtal8/traces.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/vim-scripts/nginx.vim'
 Plug 'https://github.com/vim-utils/vim-man'
 Plug 'https://github.com/w0rp/ale'
+Plug 'https://github.com/xtal8/traces.vim'
 
 " May install later
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
@@ -58,7 +59,7 @@ let &undodir = s:undodir
 unlet s:undodir
 
 colorscheme PaperColor               " nice colorscheme
-"set background=light                 " light background
+set background=dark                  " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
 set cindent                          " c-style indentation
 set noshelltemp                      " not temp files for shell commands
