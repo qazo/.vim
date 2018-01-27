@@ -25,7 +25,6 @@ Plug 'https://github.com/martingms/vipsql', {'for': ['sql', 'psql', 'pgsql']}
 Plug 'https://github.com/mcandre/Benokai'
 Plug 'https://github.com/owickstrom/vim-colors-paramount'
 Plug 'https://github.com/rust-lang/rust.vim', {'for': ['rs', 'rust']}
-Plug 'https://github.com/scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'https://github.com/summivox/vim-nfo', {'for': 'nfo'}
 Plug 'https://github.com/tbastos/vim-lua', {'for': 'lua'}
 Plug 'https://github.com/tpope/vim-commentary'
@@ -174,10 +173,6 @@ let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_cpp_gcc_options='-std=c++14 -Wall -Wextra -Wpedantic'
 let g:ale_cpp_clang_options='-std=c++14 -Wall -Wextra -Wpedantic'
 " }}}
-" vim NERDTree plugin {{{
-nnoremap <F1> :NERDTreeToggle<CR>
-inoremap <F1> <ESC>:NERDTreeToggle<CR>
-"}}}
 " vim-trailing-whitespace plugin {{{
 nnoremap <silent> <F12> :FixWhitespace<CR>
 " }}}
