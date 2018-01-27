@@ -173,6 +173,3 @@ let g:ale_c_clang_options='-std=c11 -Wall -Wextra -Wpedantic'
 let g:ale_cpp_gcc_options='-std=c++14 -Wall -Wextra -Wpedantic'
 let g:ale_cpp_clang_options='-std=c++14 -Wall -Wextra -Wpedantic'
 " }}}
-" vim-trailing-whitespace plugin {{{
-nnoremap <silent> <F12> :FixWhitespace<CR>
-" }}}
