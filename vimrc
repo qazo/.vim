@@ -16,7 +16,7 @@ Plug 'https://github.com/cespare/vim-toml', {'for': 'toml'}
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
-Plug 'https://github.com/dracula/vim'
+Plug 'https://github.com/dracula/vim', {'as': 'dracula-vim'}
 Plug 'https://github.com/fatih/vim-go', {'for': 'go'}
 Plug 'https://github.com/joonty/vim-do'
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
