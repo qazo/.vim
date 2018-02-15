@@ -32,6 +32,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-unimpaired'
+Plug 'https://github.com/udalov/kotlin-vim', {'for': ['kt', 'kotlin']}
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/vim-scripts/nginx.vim'
@@ -87,7 +88,7 @@ set shiftwidth=4                     " indent also with 4 spaces
 set sidescroll=5                     " make scrolling to the side better
 set smartcase                        " ovveride ignorecase if search term has uppercase letter
 set splitright                       " make vsplit open window on the right side
-set tabstop=4                        " tab width is 4 spaces
+set tabstop=8                        " tab width is 4 spaces
 set termencoding=utf-8               " terminal encoding to UTF-8
 set textwidth=80                     " text width of 80 chars
 set ttimeoutlen=50                   " time it takes to return to normal mode
