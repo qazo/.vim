@@ -81,14 +81,13 @@ set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
 set number                           " show line numbers
 set ruler                            " show cursor position
-set scrolloff=5                      " make last\fisrt 5 lines visible when scrolling
+set scrolloff=3                      " make last\fisrt n lines visible when scrolling
 set sessionoptions-=folds            " don't save folds to session file
 set sessionoptions-=options          " don't save global or local options in session
-set shiftwidth=4                     " indent also with 4 spaces
+set shiftwidth=8                     " indent with n spaces
 set sidescroll=5                     " make scrolling to the side better
 set smartcase                        " ovveride ignorecase if search term has uppercase letter
 set splitright                       " make vsplit open window on the right side
-set tabstop=8                        " tab width is 4 spaces
 set termencoding=utf-8               " terminal encoding to UTF-8
 set textwidth=80                     " text width of 80 chars
 set ttimeoutlen=50                   " time it takes to return to normal mode
