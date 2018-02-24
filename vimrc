@@ -75,7 +75,6 @@ set laststatus=2                     " always show statusline
 set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
 set nobackup                         " somehow backup is set (can't grep source)
-set nowritebackup
 set nofoldenable                     " open folds by default
 set noswapfile                       " turn off that annoying backup option
 set nowrap                           " turn off word wrapping
@@ -84,7 +83,9 @@ set ruler                            " show cursor position
 set scrolloff=3                      " make last\fisrt n lines visible when scrolling
 set sessionoptions-=folds            " don't save folds to session file
 set sessionoptions-=options          " don't save global or local options in session
-set shiftwidth=8                     " indent with n spaces
+set shiftwidth=4                     " indent with n spaces
+set tabstop=4                        " Number of spaces that a <Tab> in the file counts for.
+set noexpandtab                      " Keep tabs
 set sidescroll=5                     " make scrolling to the side better
 set smartcase                        " ovveride ignorecase if search term has uppercase letter
 set splitright                       " make vsplit open window on the right side
@@ -95,13 +96,18 @@ set wildmenu                         " nice completion menu for status bar comma
 let g:sql_type_default = 'pgsql'
 "}}}
 " Auto commands {{{
-autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
+augroup filetypes
+	autocmd!
+	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
+augroup END
 " }}}
 
 " Keyboard mappings {{{
 inoremap <F2> <Esc>:write<CR>
 inoremap <s-f7> <Esc>:make<CR>
 inoremap <silent><F7> <Esc>:silent make<CR>
+nmap <Leader>k <Plug>(Man)
+nmap <Leader>K <Plug>(VMan)
 nnoremap <F2> :write<CR>
 nnoremap <Leader>A Ea
 nnoremap <Leader>I Bi
