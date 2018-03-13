@@ -83,6 +83,8 @@ set ruler                            " show cursor position
 set scrolloff=3                      " make last\fisrt n lines visible when scrolling
 set sessionoptions-=folds            " don't save folds to session file
 set sessionoptions-=options          " don't save global or local options in session
+set sessionoptions-=curdir           " replace 'curdir'...
+set sessionoptions+=sesdir           " ... with 'sesdir'
 set shiftwidth=4                     " indent with n spaces
 set tabstop=4                        " Number of spaces that a <Tab> in the file counts for.
 set noexpandtab                      " Keep tabs
@@ -138,7 +140,7 @@ vnoremap <Leader>y "+y
 "}}}
 
 " vim-airline plugin {{{
-let g:airline_theme = 'papercolor'
+let g:airline_theme = 'angr'
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
@@ -150,6 +152,11 @@ let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_section_z = airline#section#create([
+	\ '--%1p%%-- ',
+	\ '%#__accent_bold#%l%#__restore__#',
+	\ ':%c'
+	\ ])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
