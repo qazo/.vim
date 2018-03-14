@@ -22,7 +22,6 @@ Plug 'https://github.com/joonty/vim-do'
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
 Plug 'https://github.com/maralla/completor.vim'
 Plug 'https://github.com/martingms/vipsql', {'for': ['sql', 'psql', 'pgsql']}
-Plug 'https://github.com/mcandre/Benokai'
 Plug 'https://github.com/owickstrom/vim-colors-paramount'
 Plug 'https://github.com/rust-lang/rust.vim', {'for': ['rs', 'rust']}
 Plug 'https://github.com/summivox/vim-nfo', {'for': 'nfo'}
