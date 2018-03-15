@@ -14,6 +14,10 @@ Plug 'https://github.com/bling/vim-bufferline'
 Plug 'https://github.com/bronson/vim-trailing-whitespace'
 Plug 'https://github.com/cespare/vim-toml', {'for': 'toml'}
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/danilo-augusto/vim-afterglow'
+Plug 'https://github.com/yorickpeterse/happy_hacking.vim'
+Plug 'https://github.com/arcticicestudio/nord-vim'
+Plug 'https://github.com/owickstrom/vim-colors-paramount'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
 Plug 'https://github.com/dracula/vim', {'as': 'dracula-vim'}
@@ -54,7 +58,7 @@ endif
 let &undodir = s:undodir
 unlet s:undodir
 
-colorscheme PaperColor               " nice colorscheme
+colorscheme afterglow                " set colorscheme
 set background=dark                  " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
 set cindent                          " c-style indentation
