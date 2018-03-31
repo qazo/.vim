@@ -124,6 +124,7 @@ nnoremap <Leader>a ea
 nnoremap <Leader>B :buffer<Space>
 nnoremap <Leader>bn :bnext<CR>
 nnoremap <Leader>bp :bprevious<CR>
+nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>i bi
 nnoremap <Leader>o o<Esc>k
 nnoremap <Leader>p "+p
