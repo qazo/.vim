@@ -71,11 +71,12 @@ if has('win32')
 	set fileformat=unix              " default to unix-style line endings
 	set fileformats=unix,dos         " preffer unix style line endings
 endif
+set fillchars=vert:┃,fold:-        " Characters to fill the statuslines and vertical separators.
 set foldmethod=marker                " set fold method to match file type
 set hlsearch                         " highlight searches
 set ignorecase                       " ingore case of search term
 set incsearch                        " do incremental searching
-set laststatus=2                     " always show statusline
+"set laststatus=2                     " always show statusline
 set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
 set nobackup                         " somehow backup is set (can't grep source)
