@@ -106,6 +106,7 @@ let g:sql_type_default = 'pgsql'
 augroup filetypes
 	autocmd!
 	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
+	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<cr>
 augroup END
 " }}}
 
