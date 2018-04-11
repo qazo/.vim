@@ -18,6 +18,7 @@ Plug 'https://github.com/danilo-augusto/vim-afterglow'
 Plug 'https://github.com/yorickpeterse/happy_hacking.vim'
 Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/owickstrom/vim-colors-paramount'
+Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/OrangeT/vim-csharp'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
