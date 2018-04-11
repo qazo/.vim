@@ -1,0 +1,15 @@
+= .vim
+
+.Windows
+....
+cd ~
+git clone https://github.com/qazo/.vim vimfiles
+vim +PlugInstall
+....
+
+.Linux
+....
+cd ~
+git clone https://github.com/qazo/.vim
+vim +PlugInstall
+....
