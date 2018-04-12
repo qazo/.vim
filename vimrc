@@ -18,11 +18,9 @@ Plug 'https://github.com/danilo-augusto/vim-afterglow'
 Plug 'https://github.com/yorickpeterse/happy_hacking.vim'
 Plug 'https://github.com/arcticicestudio/nord-vim'
 Plug 'https://github.com/owickstrom/vim-colors-paramount'
-Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/OrangeT/vim-csharp'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
-Plug 'https://github.com/dracula/vim', {'as': 'dracula-vim'}
 Plug 'https://github.com/fatih/vim-go', {'for': 'go'}
 Plug 'https://github.com/joonty/vim-do'
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
@@ -49,7 +47,6 @@ Plug 'https://github.com/xtal8/traces.vim'
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
 call plug#end()
 " }}}
-
 " fundamentals {{{
 syntax on                            " turn on syntax highlighting
 filetype plugin indent on            " plugins and indentation based on filetype
@@ -72,7 +69,7 @@ if has('win32')
 	set fileformat=unix              " default to unix-style line endings
 	set fileformats=unix,dos         " preffer unix style line endings
 endif
-set fillchars=vert:┃,fold:-        " Characters to fill the statuslines and vertical separators.
+set fillchars=vert:┃,fold:-          " Characters to fill the statuslines and vertical separators.
 set foldmethod=marker                " set fold method to match file type
 set hlsearch                         " highlight searches
 set ignorecase                       " ingore case of search term
@@ -110,7 +107,6 @@ augroup filetypes
 	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<cr>
 augroup END
 " }}}
-
 " Keyboard mappings {{{
 inoremap <F2> <Esc>:write<CR>
 inoremap <s-f7> <Esc>:make<CR>
