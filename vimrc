@@ -36,8 +36,6 @@ Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/udalov/kotlin-vim', {'for': ['kt', 'kotlin']}
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/vim-scripts/nginx.vim'
 Plug 'https://github.com/vim-utils/vim-man'
 Plug 'https://github.com/w0rp/ale'
@@ -143,44 +141,6 @@ vnoremap <Leader>Y "+Y
 vnoremap <Leader>p "+p
 vnoremap <Leader>s :sort<CR>
 vnoremap <Leader>y "+y
-"}}}
-
-" vim-airline plugin {{{
-let g:airline_theme = 'base16'
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_section_z = airline#section#create([
-	\ '--%1p%%-- ',
-	\ '%#__accent_bold#%l%#__restore__#',
-	\ ':%c'
-	\ ])
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline#extentions#ale#enabled = 1
-let g:airline_mode_map = {
-	\ '__' : '-',
-	\ 'n'  : 'N',
-	\ 'i'  : 'I',
-	\ 'R'  : 'R',
-	\ 'c'  : 'C',
-	\ 'v'  : 'V',
-	\ 'V'  : 'V',
-	\ '' : 'V',
-	\ 's'  : 'S',
-	\ 'S'  : 'S',
-	\ '' : 'S',
-	\ 't'  : 'T'
-	\ }
 "}}}
 " vim-ale plugin {{{
 let g:ale_sign_column_always = 1
