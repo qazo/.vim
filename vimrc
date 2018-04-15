@@ -195,8 +195,11 @@ nmap <Leader>at <Plug>(ale_toggle)
 " omnisharp-vim {{{
 let g:OmniSharp_server_path = expand('$HOME') . '/opt/omnisharp.http-linux/bin/omnisharp'
 " }}}
-" statusline {{{
+" completor.vim
 
+let g:completor_cs_omni_trigger = '\w+$|[\w\)\]\}\''\"]+\.\w*$'
+"let g:completor_cs_omni_trigger = '(\.|->|#|::)\s*(\w*)$'
+" statusline {{{
 function! s:statusline_mode()
 	let l:mode_map = {
 		\ '__' : { 'color' : '%1*', 'mode' : ' - '},
@@ -257,3 +260,4 @@ highlight User3 gui=bold
 highlight StatusLine guifg='#cccccc'
 
 set statusline=%!GetStatusLine()
+" }}}
