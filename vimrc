@@ -104,6 +104,9 @@ set termencoding=utf-8               " terminal encoding to UTF-8
 set textwidth=80                     " text width of 80 chars
 set ttimeoutlen=50                   " time it takes to return to normal mode
 set wildmenu                         " nice completion menu for status bar commands
+if has('gui')                        " dont map gui menu keys
+	set winaltkeys=no
+endif
 let g:sql_type_default = 'pgsql'
 "}}}
 " Auto commands {{{
@@ -120,20 +123,17 @@ inoremap <silent><F7> <Esc>:silent make<CR>
 nmap <Leader>k <Plug>(Man)
 nmap <Leader>K <Plug>(VMan)
 nnoremap <F2> :write<CR>
-nnoremap <Leader>A Ea
-nnoremap <Leader>I Bi
-nnoremap <Leader>O O<Esc>j
-nnoremap <Leader>P "+P
-nnoremap <Leader>Y "+Y
-nnoremap <Leader>a ea
 nnoremap <Leader>B :buffer<Space>
 nnoremap <Leader>bn :bnext<CR>
 nnoremap <Leader>bp :bprevious<CR>
 nnoremap <Leader>bd :bdelete<CR>
+nnoremap <Leader>d :b#<Bar>bd#<CR>
 nnoremap <Leader>i bi
+nnoremap <Leader>I Bi
+nnoremap <Leader>a ea
+nnoremap <Leader>A Ea
 nnoremap <Leader>o o<Esc>k
-nnoremap <Leader>p "+p
-nnoremap <Leader>y "+y
+nnoremap <Leader>O O<Esc>j
 nnoremap <Left> <<
 nnoremap <Right> >>
 nnoremap <S-F7> :make<CR>
@@ -143,12 +143,39 @@ nnoremap <silent><F4> :set list!<CR>
 nnoremap <silent><F7> :silent make<CR>
 nnoremap <silent><Leader>n :nohl<CR>
 nnoremap Q @@
-nnoremap <Leader>d :b#<Bar>bd#<CR>
+nnoremap <Leader>p "+p
+nnoremap <Leader>y "+y
+nnoremap <Leader>P "+P
+nnoremap <Leader>Y "+Y
 vnoremap <Leader>P "+P
 vnoremap <Leader>Y "+Y
 vnoremap <Leader>p "+p
 vnoremap <Leader>s :sort<CR>
 vnoremap <Leader>y "+y
+if has('nvim') || has('gui')
+	nnoremap <M-l> <C-w><C-l>
+	nnoremap <M-h> <C-w><C-h>
+	nnoremap <M-j> <C-w><C-j>
+	nnoremap <M-k> <C-w><C-k>
+	if has('nvim')
+		tnoremap <M-l> <C-\><C-n><C-w><C-l>
+		tnoremap <M-h> <C-\><C-n><C-w><C-h>
+		tnoremap <M-j> <C-\><C-n><C-w><C-j>
+		tnoremap <M-k> <C-\><C-n><C-w><C-k>
+	endif
+else " assume vim
+	nnoremap l <C-w><C-l>
+	nnoremap h <C-w><C-h>
+	nnoremap j <C-w><C-j>
+	nnoremap k <C-w><C-k>
+	if has('terminal')
+		tnoremap l <C-w><C-l>
+		tnoremap h <C-w><C-h>
+		tnoremap j <C-w><C-j>
+		tnoremap k <C-w><C-k>
+	endif
+endif
+
 "}}}
 " vim-ale plugin {{{
 let g:ale_sign_column_always = 1
