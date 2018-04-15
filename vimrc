@@ -55,7 +55,15 @@ endif
 let &undodir = s:undodir
 unlet s:undodir
 
-colorscheme afterglow                " set colorscheme
+if has('termguicolors') && !has('gui')    " truecolor in terminal
+	if exists('$TMUX')
+		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	endif
+	set termguicolors
+endif
+
+colorscheme nord
 set background=dark                  " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
 set cindent                          " c-style indentation
