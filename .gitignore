@@ -4,3 +4,4 @@ view/
 persist/
 autoload/plug.vim.old
 .netrwhist
+session.vim
