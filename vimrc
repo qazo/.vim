@@ -8,6 +8,7 @@ let s:undodir = s:confdir . '/persist/undo'
 
 " plug.vim {{{
 call plug#begin(s:confdir . '/bundle')
+Plug 'https://github.com/OmniSharp/omnisharp-vim'
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/bling/vim-bufferline'
