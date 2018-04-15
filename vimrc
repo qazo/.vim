@@ -222,27 +222,29 @@ function! s:sid()
 endfunction
 
 function! s:statusline_gitinfo()
-	let l:branch_symbol = ''
-	let l:gitinfo = '%{fugitive#head() !=# "" ? " " . fugitive#head() . " " : ""}'
-	return l:gitinfo
+	let l:symbol = ''
+	let l:branch = fugitive#head()
+	if l:branch ==# ''
+		return ''
+	endif
+	return l:symbol . l:branch . ' '
 endfunction
 
 function! s:statusline_fileinfo()
-	let l:fileinfo = ' %{&filetype}'
-	let l:fileinfo .= ' %{&fileencoding ? &fileencoding : &encoding}'
-	let l:fileinfo .= ':%{&fileformat} '
-	return l:fileinfo
+	let l:encoding = &fileencoding ==# '' ? &encoding : &fileencoding
+	return printf('%s %s:%s ', &filetype, l:encoding, &fileformat)
 endfunction
 
 function! GetStatusLine()
+	let l:sid = s:sid()
 	let l:mode = s:statusline_mode()
 	let l:statusline = l:mode['color']
 	let l:statusline .= l:mode['mode']
 	let l:statusline .= '%2*'
-	let l:statusline .= s:statusline_gitinfo()
+	let l:statusline .= '%{<SNR>' . l:sid . '_statusline_gitinfo()}'
 	let l:statusline .= '%* %n:%t%m'
 	let l:statusline .= '%='
-	let l:statusline .= s:statusline_fileinfo()
+	let l:statusline .= '%{<SNR>' . l:sid . '_statusline_fileinfo()}'
 	let l:statusline .= '%2*'
 	let l:statusline .= ' %l:%c [%p%%] '
 	return l:statusline
