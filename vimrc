@@ -190,5 +190,58 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>at <Plug>(ale_toggle)
-
 " }}}
+" omnisharp-vim {{{
+let g:OmniSharp_server_path = expand('$HOME') . '/opt/omnisharp.http-linux/bin/omnisharp'
+" }}}
+" statusline {{{
+function! s:statusline_mode()
+	let l:mode_map = {
+		\ '__' : '%1* -',
+		\ 'n'  : '%1* N',
+		\ 'i'  : '%3* I',
+		\ 'R'  : '%3* R',
+		\ 'c'  : '%3* C',
+		\ 'v'  : '%3* V',
+		\ 'V'  : '%3* V',
+		\ '' : '%3* V',
+		\ 's'  : '%3* S',
+		\ 'S'  : '%3* S',
+		\ '' : '%3* S',
+		\ 't'  : '%4* T',
+		\ }
+	return l:mode_map[mode()]
+endfunction
+
+
+function! s:statusline_gitinfo()
+	let l:branch_symbol = ''
+	let l:gitinfo = '%2*'
+	let l:gitinfo .= '%{fugitive#head() !=# "" ?" " . fugitive#head(): ""}'
+	return l:gitinfo
+endfunction
+
+function! s:statusline_fileinfo()
+	let l:fileinfo = '%{&filetype}'
+	let l:fileinfo .= ' %{&fileencoding?&fileencoding:&encoding}'
+	let l:fileinfo .= ':%{&fileformat}'
+	return l:fileinfo
+endfunction
+
+function! GetStatusLine()
+	let l:statusline = s:statusline_mode()
+	let l:statusline .= s:statusline_gitinfo()
+	let l:statusline .= ' %* %n:%t%m'
+	let l:statusline .= ' %='
+	let l:statusline .= ' ' . s:statusline_fileinfo()
+	let l:statusline .= ' %2* %l:%c [%p%%] '
+	return l:statusline
+endfunction
+
+highlight VertSplit ctermbg=NONE guibg=NONE
+highlight User1 gui=bold guibg='#cccccc' guifg='#494949'
+highlight User2 gui=NONE guibg='#cccccc' guifg='#494949'
+"highlight User3 guibg='#cccccc' guifg='#494949'
+highlight StatusLine guifg='#cccccc'
+
+set statusline=%!GetStatusLine()
