@@ -228,12 +228,12 @@ function! s:sid()
 endfunction
 
 function! s:statusline_gitinfo()
-	let l:symbol = ''
+	let l:sym = ''
 	let l:branch = fugitive#head()
 	if l:branch ==# ''
 		return ''
 	endif
-	return l:symbol . l:branch . ' '
+	return l:sym . l:branch . ' '
 endfunction
 
 function! s:statusline_fileinfo()
@@ -241,9 +241,30 @@ function! s:statusline_fileinfo()
 	return printf('%s %s:%s ', &filetype, l:encoding, &fileformat)
 endfunction
 
+function! s:statusline_errors(buffer)
+	let l:ale = ale#statusline#Count(a:buffer)
+	let l:info = {
+		\ 'errors' : l:ale.error + l:ale.style_error,
+		\ 'warnings' : 0,
+		\ 'total' : l:ale.total
+		\ }
+	let l:info.warnings = l:info.total - l:info.errors
+	return l:info
+endfunction
+
+function! s:statusline_aleinfo()
+	let l:buffer = buffer_number('%')
+	let l:ale = ale#engine#GetLoclist(l:buffer)
+	if empty(l:ale) || empty(l:ale[0])
+		return ''
+	endif
+	return printf(' %s:%s ', l:ale[0].type, l:ale[0].lnum)
+endfunction
+
 function! GetStatusLine()
 	let l:sid = s:sid()
 	let l:mode = s:statusline_mode()
+
 	let l:statusline = l:mode['color']
 	let l:statusline .= l:mode['mode']
 	let l:statusline .= '%2*'
@@ -253,6 +274,8 @@ function! GetStatusLine()
 	let l:statusline .= '%{<SNR>' . l:sid . '_statusline_fileinfo()}'
 	let l:statusline .= '%2*'
 	let l:statusline .= ' %l:%c [%p%%] '
+	let l:statusline .= '%#Error#'
+	let l:statusline .= '%{<SNR>' . l:sid . '_statusline_aleinfo()}'
 	return l:statusline
 endfunction
 
@@ -262,5 +285,5 @@ highlight User2 gui=NONE guibg='#cccccc' guifg='#494949'
 highlight User3 gui=bold
 highlight StatusLine guifg='#cccccc'
 
-set statusline=%!GetStatusLine()
+let &statusline='%!GetStatusLine()'
 " }}}
