@@ -143,6 +143,7 @@ nnoremap <Tab> :tabprevious<CR>
 nnoremap <silent><F4> :set list!<CR>
 nnoremap <silent><F7> :silent make<CR>
 nnoremap <silent><Leader>n :nohl<CR>
+nnoremap <silent><leader>st :call <SID>statusline_cycle()<cr>
 nnoremap Q @@
 nnoremap <Leader>p "+p
 nnoremap <Leader>y "+y
@@ -176,9 +177,6 @@ else " assume vim
 		tnoremap k <C-w><C-k>
 	endif
 endif
-
-nnoremap <silent><leader>st :call <SID>statusline_cycle()<cr>
-
 "}}}
 " vim-ale plugin {{{
 let g:ale_sign_column_always = 1
