@@ -177,6 +177,8 @@ else " assume vim
 	endif
 endif
 
+nnoremap <silent><leader>st :call <SID>statusline_cycle()<cr>
+
 "}}}
 " vim-ale plugin {{{
 let g:ale_sign_column_always = 1
@@ -250,6 +252,11 @@ function! s:statusline_errors(buffer)
 		\ }
 	let l:info.warnings = l:info.total - l:info.errors
 	return l:info
+endfunction
+
+function! s:statusline_cycle()
+	let &laststatus = (&laststatus + 1) % 3
+	echomsg &laststatus
 endfunction
 
 function! s:statusline_aleinfo()
