@@ -189,6 +189,8 @@ let g:ale_cpp_clangtidy_checks = ['*', '-llvm-header-guard']
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_warn_about_trailing_whitespace = 1
+let g:ale_warn_about_trailing_blank_lines = 1
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>at <Plug>(ale_toggle)
 " }}}
