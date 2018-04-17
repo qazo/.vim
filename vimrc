@@ -193,7 +193,8 @@ nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>at <Plug>(ale_toggle)
 " }}}
 " omnisharp-vim {{{
-let g:OmniSharp_server_path = expand('$HOME') . '/opt/omnisharp.http-linux/bin/omnisharp'
+let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.http-mono/bin/omnisharp')
+let g:OmniSharp_server_use_mono = 1
 " }}}
 " completor.vim
 
