@@ -261,11 +261,21 @@ endfunction
 
 function! s:statusline_aleinfo()
 	let l:buffer = buffer_number('%')
-	let l:ale = ale#engine#GetLoclist(l:buffer)
+	let l:ale = copy(ale#engine#GetLoclist(l:buffer))
 	if empty(l:ale) || empty(l:ale[0])
 		return ''
 	endif
-	return printf(' %s:%s ', l:ale[0].type, l:ale[0].lnum)
+
+	let l:errs = filter(copy(l:ale), { i, v -> v.type ==# 'E'})
+	let l:warn = filter(copy(l:ale), { i, v -> v.type ==# 'W'})
+	let l:info = ''
+	if !empty(l:warn)
+		let l:info .= printf('%s:%s', l:warn[0].type, l:warn[0].lnum)
+	endif
+	if !empty(l:errs)
+		let l:info .= printf('%s:%s', l:errs[0].type, l:errs[0].lnum)
+	endif
+	return printf(' %s ', l:info)
 endfunction
 
 function! GetStatusLine()
