@@ -260,6 +260,7 @@ endfunction
 function! s:statusline_aleinfo()
 	let l:buffer = buffer_number('%')
 	let l:ale = copy(ale#engine#GetLoclist(l:buffer))
+	let l:ale = filter(l:ale, { i, v -> v.bufnr ==# l:buffer})
 	if empty(l:ale) || empty(l:ale[0])
 		return ''
 	endif
