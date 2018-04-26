@@ -23,7 +23,6 @@ Plug 'https://github.com/OrangeT/vim-csharp'
 Plug 'https://github.com/danro/rename.vim'
 Plug 'https://github.com/davisdude/vim-love-docs', {'for': 'lua'}
 Plug 'https://github.com/fatih/vim-go', {'for': 'go'}
-Plug 'https://github.com/joonty/vim-do'
 Plug 'https://github.com/lifepillar/pgsql.vim', {'for': ['sql', 'psql', 'pgsql']}
 Plug 'https://github.com/maralla/completor.vim'
 Plug 'https://github.com/martingms/vipsql', {'for': ['sql', 'psql', 'pgsql']}
@@ -114,7 +113,7 @@ let g:sql_type_default = 'pgsql'
 augroup filetypes
 	autocmd!
 	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
-	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<cr>
+	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<CR>
 augroup END
 " }}}
 " Keyboard mappings {{{
