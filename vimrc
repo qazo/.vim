@@ -115,6 +115,13 @@ augroup filetypes
 	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
 	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<CR>
 augroup END
+
+augroup omnisharp
+	autocmd!
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>gd :OmniSharpGotoDefinition<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>fu :OmniSharpFixUsings<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>t :OmniSharpTypeLookup<CR>
+augroup END
 " }}}
 " Keyboard mappings {{{
 inoremap <F2> <Esc>:write<CR>
