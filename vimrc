@@ -206,10 +206,11 @@ nmap <Leader>at <Plug>(ale_toggle)
 let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.http-mono/OmniSharp.exe')
 let g:OmniSharp_server_use_mono = 1
 " }}}
-" completor.vim
+" completor.vim {{{
 
 let g:completor_cs_omni_trigger = '\w+$|[\w\)\]\}\''\"]+\.\w*$'
 "let g:completor_cs_omni_trigger = '(\.|->|#|::)\s*(\w*)$'
+" }}}
 " statusline {{{
 function! s:statusline_mode()
 	let l:mode_map = {
