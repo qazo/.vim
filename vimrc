@@ -40,6 +40,8 @@ Plug 'https://github.com/vim-scripts/nginx.vim'
 Plug 'https://github.com/vim-utils/vim-man'
 Plug 'https://github.com/w0rp/ale'
 Plug 'https://github.com/xtal8/traces.vim'
+Plug 'https://github.com/mattn/emmet-vim'
+Plug 'https://github.com/zig-lang/zig.vim'
 
 " May install later
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
