@@ -169,7 +169,7 @@ if has('nvim') || has('gui')
 	nnoremap <M-h> <C-w><C-h>
 	nnoremap <M-j> <C-w><C-j>
 	nnoremap <M-k> <C-w><C-k>
-	if has('nvim')
+	if has('terminal')
 		tnoremap <M-l> <C-\><C-n><C-w><C-l>
 		tnoremap <M-h> <C-\><C-n><C-w><C-h>
 		tnoremap <M-j> <C-\><C-n><C-w><C-j>
