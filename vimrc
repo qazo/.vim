@@ -122,10 +122,10 @@ augroup END
 
 augroup omnisharp
 	autocmd!
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>ogd :OmniSharpGotoDefinition<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>ofu :OmniSharpFixUsings<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>otl :OmniSharpTypeLookup<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>oca :OmniSharpGetCodeActions<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>gd :OmniSharpGotoDefinition<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>fu :OmniSharpFixUsings<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>t :OmniSharpTypeLookup<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>ca :OmniSharpGetCodeActions<CR>
 augroup END
 " }}}
 " Keyboard mappings {{{
