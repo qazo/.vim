@@ -122,9 +122,10 @@ augroup END
 
 augroup omnisharp
 	autocmd!
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>gd :OmniSharpGotoDefinition<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>fu :OmniSharpFixUsings<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <leader>t :OmniSharpTypeLookup<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>ogd :OmniSharpGotoDefinition<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>ofu :OmniSharpFixUsings<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>otl :OmniSharpTypeLookup<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>oca :OmniSharpGetCodeActions<CR>
 augroup END
 " }}}
 " Keyboard mappings {{{
@@ -181,10 +182,10 @@ else " assume vim
 	nnoremap j <C-w><C-j>
 	nnoremap k <C-w><C-k>
 	if has('terminal')
-		tnoremap l <C-w><C-l>
-		tnoremap h <C-w><C-h>
-		tnoremap j <C-w><C-j>
-		tnoremap k <C-w><C-k>
+		tnoremap l <C-\><C-n><C-w><C-l>
+		tnoremap h <C-\><C-n><C-w><C-h>
+		tnoremap j <C-\><C-n><C-w><C-j>
+		tnoremap k <C-\><C-n><C-w><C-k>
 	endif
 endif
 "}}}
