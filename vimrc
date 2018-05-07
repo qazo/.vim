@@ -165,7 +165,7 @@ vnoremap <Leader>Y "+Y
 vnoremap <Leader>p "+p
 vnoremap <Leader>s :sort<CR>
 vnoremap <Leader>y "+y
-if has('nvim') || has('gui')
+if has('nvim') || has('gui') || exists('$XTERM_VERSION')
 	nnoremap <M-l> <C-w><C-l>
 	nnoremap <M-h> <C-w><C-h>
 	nnoremap <M-j> <C-w><C-j>
