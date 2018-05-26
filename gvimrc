@@ -1,7 +1,7 @@
 set guioptions-=T
 set guioptions-=L
 set guioptions-=e
-"set guioptions-=m
+set guioptions-=m
 "set guioptions-=r
 
 set lines=40
