@@ -118,6 +118,7 @@ augroup filetypes
 	autocmd!
 	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
 	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<CR>
+	autocmd FileType godoc nnoremap <silent> <buffer> q :bdelete<CR>
 augroup END
 
 augroup omnisharp
@@ -165,7 +166,7 @@ vnoremap <Leader>Y "+Y
 vnoremap <Leader>p "+p
 vnoremap <Leader>s :sort<CR>
 vnoremap <Leader>y "+y
-if has('nvim') || has('gui')
+if has('nvim') || has('gui') || exists('$XTERM_VERSION')
 	nnoremap <M-l> <C-w><C-l>
 	nnoremap <M-h> <C-w><C-h>
 	nnoremap <M-j> <C-w><C-j>
@@ -182,10 +183,10 @@ else " assume vim
 	nnoremap j <C-w><C-j>
 	nnoremap k <C-w><C-k>
 	if has('terminal')
-		tnoremap l <C-w><C-l>
-		tnoremap h <C-w><C-h>
-		tnoremap j <C-w><C-j>
-		tnoremap k <C-w><C-k>
+		tnoremap l <C-\><C-n><C-w><C-l>
+		tnoremap h <C-\><C-n><C-w><C-h>
+		tnoremap j <C-\><C-n><C-w><C-j>
+		tnoremap k <C-\><C-n><C-w><C-k>
 	endif
 endif
 "}}}
