@@ -205,7 +205,11 @@ nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>at <Plug>(ale_toggle)
 " }}}
 " omnisharp-vim {{{
-let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.http-mono/OmniSharp.exe')
+if has('win32')
+	let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.http-win-x64/OmniSharp.exe')
+else
+	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.http-mono/OmniSharp.exe')
+endif
 let g:OmniSharp_server_use_mono = 1
 " }}}
 " completor.vim {{{
