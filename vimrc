@@ -84,7 +84,7 @@ set foldmethod=marker                " set fold method to match file type
 set hlsearch                         " highlight searches
 set ignorecase                       " ingore case of search term
 set incsearch                        " do incremental searching
-set laststatus=1                     " determine when status line should be present
+set laststatus=2                     " determine when status line should be present
 set listchars+=precedes:<,extends:>  " make it easy to identify long lines
 set mouse=a                          " enable mouse support
 set nobackup                         " somehow backup is set (can't grep source)
