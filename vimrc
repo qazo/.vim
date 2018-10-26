@@ -128,6 +128,12 @@ augroup omnisharp
 	autocmd FileType cs nnoremap <silent> <buffer> <leader>t :OmniSharpTypeLookup<CR>
 	autocmd FileType cs nnoremap <silent> <buffer> <C-a> :OmniSharpGetCodeActions<CR>
 augroup END
+
+augroup statuscolors
+	autocmd!
+	autocmd ColorScheme nord call SetStatusColors()
+augroup END
+
 " }}}
 " Keyboard mappings {{{
 inoremap <F2> <Esc>:write<CR>
@@ -312,11 +318,16 @@ function! GetStatusLine()
 	return l:statusline
 endfunction
 
-highlight VertSplit ctermbg=NONE guibg=NONE
-highlight User1 gui=bold guibg='#cccccc' guifg='#494949'
-highlight User2 gui=NONE guibg='#cccccc' guifg='#494949'
-highlight User3 gui=bold
-highlight StatusLine guifg='#cccccc'
+function! SetStatusColors()
+	highlight VertSplit ctermbg=NONE guibg=NONE
+	highlight User1 gui=bold guibg='#cccccc' guifg='#494949'
+	highlight User2 gui=NONE guibg='#cccccc' guifg='#494949'
+	highlight User3 gui=bold
+	highlight StatusLine guifg='#cccccc'
+endfunction
+
+" call for the first time
+call SetStatusColors()
 
 let &statusline='%!GetStatusLine()'
 " }}}
