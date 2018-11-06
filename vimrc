@@ -44,6 +44,7 @@ Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/zig-lang/zig.vim'
 Plug 'https://github.com/othree/csscomplete.vim'
 Plug 'https://github.com/hail2u/vim-css3-syntax'
+Plug 'https://github.com/jremmen/vim-ripgrep'
 
 " May install later
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
