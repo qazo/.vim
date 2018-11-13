@@ -178,11 +178,16 @@ if has('nvim') || has('gui') || exists('$XTERM_VERSION')
 	nnoremap <M-h> <C-w><C-h>
 	nnoremap <M-j> <C-w><C-j>
 	nnoremap <M-k> <C-w><C-k>
-	if has('terminal')
+	if has('nvim')
 		tnoremap <M-l> <C-\><C-n><C-w><C-l>
 		tnoremap <M-h> <C-\><C-n><C-w><C-h>
 		tnoremap <M-j> <C-\><C-n><C-w><C-j>
 		tnoremap <M-k> <C-\><C-n><C-w><C-k>
+	else " either xterm or gvim
+		tnoremap <M-l> <C-w><C-l>
+		tnoremap <M-h> <C-w><C-h>
+		tnoremap <M-j> <C-w><C-j>
+		tnoremap <M-k> <C-w><C-k>
 	endif
 else " assume vim
 	nnoremap l <C-w><C-l>
