@@ -45,6 +45,7 @@ Plug 'https://github.com/zig-lang/zig.vim'
 Plug 'https://github.com/othree/csscomplete.vim'
 Plug 'https://github.com/hail2u/vim-css3-syntax'
 Plug 'https://github.com/jremmen/vim-ripgrep'
+Plug 'https://github.com/PProvost/vim-ps1', {'for': ['ps1', 'powershell']}
 
 " May install later
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
@@ -147,7 +148,8 @@ nnoremap <Leader>B :buffer<Space>
 nnoremap <Leader>bn :bnext<CR>
 nnoremap <Leader>bp :bprevious<CR>
 nnoremap <Leader>bd :bdelete<CR>
-nnoremap <Leader>d :b#<Bar>bd#<CR>
+nnoremap <Leader>bD :bdelete!<CR>
+nnoremap <Leader>d :buffer #<Bar>bdelete #<CR>
 nnoremap <Leader>i bi
 nnoremap <Leader>I Bi
 nnoremap <Leader>a ea
@@ -225,6 +227,12 @@ else
 	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.http-mono/OmniSharp.exe')
 endif
 let g:OmniSharp_server_use_mono = 1
+" }}}
+" CtrlP {{{
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll|obj|pdb|(deps|assets)\.json|nuget\.(g\.(props|targets)|cache))$',
+	\ }
 " }}}
 " completor.vim {{{
 
