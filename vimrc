@@ -72,6 +72,7 @@ endif
 colorscheme nord
 set background=dark                  " light background
 set backspace=indent,eol,start       " Allow backspacing over everything in insert mode
+set completeopt+=noinsert            " don't automatically insert suggestions when typing
 set cindent                          " c-style indentation
 set noshelltemp                      " not temp files for shell commands
 set encoding=utf-8                   " vim encoding to UTF-8
