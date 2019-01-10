@@ -121,7 +121,9 @@ augroup filetypes
 	autocmd!
 	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
 	autocmd FileType help nnoremap <silent> <buffer> q :bdelete<CR>
+	autocmd FileType netrw nnoremap <silent> <buffer> q :bdelete<CR>
 	autocmd FileType godoc nnoremap <silent> <buffer> q :bdelete<CR>
+	autocmd FileType qf nnoremap <silent> <buffer> q :bdelete<CR>
 augroup END
 
 augroup omnisharp
