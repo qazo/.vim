@@ -200,10 +200,10 @@ else " assume vim
 	nnoremap j <C-w><C-j>
 	nnoremap k <C-w><C-k>
 	if has('terminal')
-		tnoremap l <C-\><C-n><C-w><C-l>
-		tnoremap h <C-\><C-n><C-w><C-h>
-		tnoremap j <C-\><C-n><C-w><C-j>
-		tnoremap k <C-\><C-n><C-w><C-k>
+		tnoremap l <C-w><C-l>
+		tnoremap h <C-w><C-h>
+		tnoremap j <C-w><C-j>
+		tnoremap k <C-w><C-k>
 	endif
 endif
 "}}}
