@@ -139,7 +139,7 @@ augroup omnisharp
 	autocmd FileType cs nnoremap <silent> <buffer> gd :OmniSharpGotoDefinition<CR>
 	autocmd FileType cs nnoremap <silent> <buffer> <leader>fu :OmniSharpFixUsings<CR>
 	autocmd FileType cs nnoremap <silent> <buffer> <leader>t :OmniSharpTypeLookup<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <C-a> :OmniSharpGetCodeActions<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <leader>. :OmniSharpGetCodeActions<CR>
 augroup END
 
 augroup statuscolors
