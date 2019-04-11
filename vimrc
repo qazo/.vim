@@ -158,9 +158,8 @@ nnoremap <F2> :write<CR>
 nnoremap <Leader>B :buffer<Space>
 nnoremap <Leader>bn :bnext<CR>
 nnoremap <Leader>bp :bprevious<CR>
-nnoremap <Leader>bd :bdelete<CR>
-nnoremap <Leader>bD :bdelete!<CR>
-nnoremap <Leader>d :buffer #<Bar>bdelete #<CR>
+nnoremap <Leader>bd :confirm bdelete<CR>
+nnoremap <Leader>d :confirm buffer #<Bar>bdelete #<CR>
 nnoremap <Leader>i bi
 nnoremap <Leader>I Bi
 nnoremap <Leader>a ea
