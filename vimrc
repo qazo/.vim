@@ -9,6 +9,7 @@ let s:templatedir = s:confdir . '/templates'
 
 " plug.vim {{{
 call plug#begin(s:confdir . '/bundle')
+Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/OmniSharp/omnisharp-vim'
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 Plug 'https://github.com/airblade/vim-gitgutter'
@@ -232,11 +233,12 @@ nmap <Leader>at <Plug>(ale_toggle)
 " }}}
 " omnisharp-vim {{{
 if has('win32')
-	let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.http-win-x64/OmniSharp.exe')
+	let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.stdio/OmniSharp.exe')
 else
-	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.http-mono/OmniSharp.exe')
+	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.stdio/run')
+	let g:OmniSharp_server_use_mono = 0
 endif
-let g:OmniSharp_server_use_mono = 1
+let g:OmniSharp_server_stdio = 1
 " }}}
 " CtrlP {{{
 let g:ctrlp_custom_ignore = {
