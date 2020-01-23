@@ -228,6 +228,7 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_warn_about_trailing_whitespace = 1
 let g:ale_warn_about_trailing_blank_lines = 1
+let g:ale_linters = { 'cs': ['OmniSharp'] }
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>at <Plug>(ale_toggle)
 " }}}
@@ -235,7 +236,7 @@ nmap <Leader>at <Plug>(ale_toggle)
 if has('win32')
 	let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.stdio/OmniSharp.exe')
 else
-	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp.stdio/run')
+	let g:OmniSharp_server_path = expand('$HOME/Applications/omnisharp.stdio/run')
 	let g:OmniSharp_server_use_mono = 0
 endif
 let g:OmniSharp_server_stdio = 1
