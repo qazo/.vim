@@ -18,9 +18,9 @@ endif
 
 if has('win32')
 	if has('nvim')
-		set guifont=Lucida\ Console:h10
+		set guifont=Hack:h11
 	else
-		set guifont=Lucida_Console:h10
+		set guifont=Hack:h11
 	endif
 
 	"set guifont=Consolas:h10
@@ -28,5 +28,5 @@ if has('win32')
 	"set guifont=Terminus\ (TTF):h12,Consolas:h10
 else
 	"set guifont=Terminus\ 10
-	set guifont=Monospace\ 10
+	set guifont=Hack\ 11
 endif
