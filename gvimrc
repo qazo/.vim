@@ -22,11 +22,6 @@ if has('win32')
 	else
 		set guifont=Hack:h11
 	endif
-
-	"set guifont=Consolas:h10
-	"set guifont=ProggySquareTT:h12:cANSI
-	"set guifont=Terminus\ (TTF):h12,Consolas:h10
 else
-	"set guifont=Terminus\ 10
 	set guifont=Hack\ 11
 endif
