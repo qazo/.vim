@@ -187,6 +187,8 @@ vnoremap <Leader>Y "+Y
 vnoremap <Leader>p "+p
 vnoremap <Leader>s :sort<CR>
 vnoremap <Leader>y "+y
+
+" Pane navigation
 if has('nvim') || has('gui') || exists('$XTERM_VERSION')
 	nnoremap <M-l> <C-w><C-l>
 	nnoremap <M-h> <C-w><C-h>
@@ -248,6 +250,7 @@ else
 	let g:OmniSharp_server_use_mono = 0
 endif
 let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_highlight_types = 2
 " }}}
 " CtrlP {{{
 let g:ctrlp_custom_ignore = {
