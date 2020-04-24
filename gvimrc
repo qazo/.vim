@@ -18,10 +18,10 @@ endif
 
 if has('win32')
 	if has('nvim')
-		set guifont=Hack:h11
+		GuiFont! Hack:h12
 	else
-		set guifont=Hack:h11
+		set guifont=Hack:h12
 	endif
 else
-	set guifont=Hack\ 11
+	set guifont=Hack\ 12
 endif
