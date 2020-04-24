@@ -235,7 +235,14 @@ nmap <Leader>at <Plug>(ale_toggle)
 " }}}
 " omnisharp-vim {{{
 if has('win32')
-	let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.stdio/OmniSharp.exe')
+	" temporary workaround. neovim jobstart does not work well with .net
+	" framework processes. fix should be merged on 0.5 soon enough, as
+	" pull request has been sublitted
+	if has('nvim')
+		let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.stdioproxy/stdioproxy.exe')
+	else
+		let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.stdio/OmniSharp.exe')
+	endif
 else
 	let g:OmniSharp_server_path = expand('$HOME/Applications/omnisharp.stdio/run')
 	let g:OmniSharp_server_use_mono = 0
