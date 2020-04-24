@@ -173,8 +173,8 @@ nnoremap <Leader>O O<Esc>j
 nnoremap <Left> <<
 nnoremap <Right> >>
 nnoremap <S-F7> :make<CR>
-nnoremap <S-Tab> :tabnext<CR>
-nnoremap <Tab> :tabprevious<CR>
+nnoremap <S-Tab> :tabprevious<CR>
+nnoremap <Tab> :tabnext<CR>
 nnoremap <silent><F4> :set list!<CR>
 nnoremap <silent><F7> :silent make<CR>
 nnoremap <silent><Leader>n :nohl<CR>
