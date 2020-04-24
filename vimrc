@@ -148,7 +148,7 @@ augroup END
 
 augroup statuscolors
 	autocmd!
-	autocmd ColorScheme nord call SetStatusColors()
+	autocmd ColorScheme nord call ChangeNordStatuslineColors()
 augroup END
 
 " }}}
@@ -348,7 +348,7 @@ function! GetStatusLine()
 	return l:statusline
 endfunction
 
-function! SetStatusColors()
+function! ChangeNordStatuslineColors()
 	highlight VertSplit ctermbg=NONE guibg=NONE
 	highlight User1 gui=bold guibg='#cccccc' guifg='#494949'
 	highlight User2 gui=NONE guibg='#cccccc' guifg='#494949'
@@ -357,7 +357,7 @@ function! SetStatusColors()
 endfunction
 
 " call for the first time
-call SetStatusColors()
+call ChangeNordStatuslineColors()
 
 let &statusline='%!GetStatusLine()'
 " }}}
