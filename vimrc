@@ -133,7 +133,6 @@ augroup templates
 	autocmd!
 	autocmd BufNewFile *.{ad,adoc,asciidoc} execute ':0r ' . s:templatedir . '/template.adoc'
 	autocmd BufNewFile *.{c} execute ':0r ' . s:templatedir . '/template.c'
-	autocmd BufNewFile *.{cs} execute ':0r ' . s:templatedir . '/template.cs'
 augroup END
 
 augroup omnisharp
