@@ -141,9 +141,9 @@ augroup omnisharp
 	autocmd FileType cs nnoremap <silent> <buffer> <leader>fu :OmniSharpFixUsings<CR>
 	autocmd FileType cs nnoremap <silent> <buffer> <leader>t :OmniSharpTypeLookup<CR>
 	autocmd FileType cs nnoremap <silent> <buffer> <leader>. :OmniSharpGetCodeActions<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <F4> :w|term dotnet build<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <F5> :w|term dotnet run<CR>
-	autocmd FileType cs nnoremap <silent> <buffer> <F6> :w|!dotnet script %<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <F4> :w<Bar>term dotnet build<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <F5> :w<Bar>term dotnet run<CR>
+	autocmd FileType cs nnoremap <silent> <buffer> <F6> :w<Bar>!dotnet script %<CR>
 augroup END
 
 augroup statuscolors
