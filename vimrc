@@ -284,6 +284,9 @@ endfunction
 
 function! s:statusline_gitinfo()
 	let l:sym = ''
+	if !exists('*fugitive#head')
+		return ''
+	endif
 	let l:branch = fugitive#head()
 	if l:branch ==# ''
 		return ''
@@ -313,6 +316,9 @@ function! s:statusline_cycle()
 endfunction
 
 function! s:statusline_aleinfo()
+	if !exists('*ale#engine#GetLoclist')
+		return ''
+	endif
 	let l:buffer = buffer_number('%')
 	let l:ale = copy(ale#engine#GetLoclist(l:buffer))
 	let l:ale = filter(l:ale, { i, v -> v.bufnr ==# l:buffer})
