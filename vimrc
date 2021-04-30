@@ -42,6 +42,7 @@ Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/udalov/kotlin-vim', {'for': ['kt', 'kotlin']}
 Plug 'https://github.com/vim-scripts/nginx.vim'
 Plug 'https://github.com/vim-utils/vim-man'
+Plug 'https://github.com/vimwiki/vimwiki'
 Plug 'https://github.com/w0rp/ale'
 Plug 'https://github.com/xtal8/traces.vim'
 Plug 'https://github.com/mattn/emmet-vim'
