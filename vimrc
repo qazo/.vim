@@ -239,7 +239,7 @@ nmap <Leader>at <Plug>(ale_toggle)
 " }}}
 " omnisharp-vim {{{
 if has('win32')
-	let g:OmniSharp_server_path = expand('$HOME/local/omnisharp.stdio/OmniSharp.exe')
+	let g:OmniSharp_server_path = expand('/Applications/omnisharp/OmniSharp.exe')
 else
 	let g:OmniSharp_server_path = expand('$HOME/Applications/omnisharp.stdio/run')
 	let g:OmniSharp_server_use_mono = 0
