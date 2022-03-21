@@ -51,6 +51,7 @@ Plug 'https://github.com/othree/csscomplete.vim'
 Plug 'https://github.com/hail2u/vim-css3-syntax'
 Plug 'https://github.com/jremmen/vim-ripgrep'
 Plug 'https://github.com/PProvost/vim-ps1', {'for': ['ps1', 'powershell']}
+Plug 'https://github.com/ron-rs/ron.vim', {'for': 'ron'}
 
 " May install later
 "Plug 'https://github.com/lifepillar/vim-mucomplete'
@@ -239,7 +240,7 @@ nmap <Leader>at <Plug>(ale_toggle)
 " }}}
 " omnisharp-vim {{{
 if has('win32')
-	let g:OmniSharp_server_path = expand('/Applications/omnisharp/OmniSharp.exe')
+	let g:OmniSharp_server_path = expand('C:/Applications/omnisharp/OmniSharp.exe')
 else
 	let g:OmniSharp_server_path = expand('$HOME/Applications/omnisharp.stdio/run')
 	let g:OmniSharp_server_use_mono = 0
