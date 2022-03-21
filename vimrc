@@ -9,6 +9,7 @@ let s:templatedir = s:confdir . '/templates'
 
 " plug.vim {{{
 call plug#begin(s:confdir . '/bundle')
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/OmniSharp/omnisharp-vim'
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
@@ -242,7 +243,7 @@ nmap <Leader>at <Plug>(ale_toggle)
 if has('win32')
 	let g:OmniSharp_server_path = expand('C:/Applications/omnisharp/OmniSharp.exe')
 else
-	let g:OmniSharp_server_path = expand('$HOME/Applications/omnisharp.stdio/run')
+	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp/run')
 	let g:OmniSharp_server_use_mono = 0
 endif
 let g:OmniSharp_server_stdio = 1
