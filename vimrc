@@ -192,6 +192,13 @@ vnoremap <Leader>p "+p
 vnoremap <Leader>s :sort<CR>
 vnoremap <Leader>y "+y
 
+" nvim: Y was changed to y$ (similar to D and C).
+" let's revert that change
+" https://github.com/neovim/neovim/pull/13268
+if has('nvim')
+	nnoremap Y Y
+endif
+
 " Pane navigation
 if has('nvim') || has('gui') || exists('$XTERM_VERSION')
 	nnoremap <M-l> <C-w><C-l>
