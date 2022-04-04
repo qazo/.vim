@@ -265,7 +265,7 @@ let g:ctrlp_custom_ignore = {
 " completor.vim {{{
 
 let g:completor_cs_omni_trigger = '\w+$|[\w\)\]\}\''\"]+\.\w*$'
-"let g:completor_cs_omni_trigger = '(\.|->|#|::)\s*(\w*)$'
+
 " }}}
 " statusline {{{
 function! s:statusline_mode()
