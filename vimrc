@@ -231,11 +231,11 @@ endif
 "}}}
 " vim-ale plugin {{{
 let g:ale_sign_column_always = 1
-let g:ale_c_gcc_options = '-std=c11 -Wall -Wextra -Wpedantic'
-let g:ale_c_clang_options = '-std=c11 -Wall -Wextra -Wpedantic'
+let g:ale_c_gcc_options = '-std=c17 -Wall -Wextra -Wpedantic'
+let g:ale_c_clang_options = '-std=c17 -Wall -Wextra -Wpedantic'
 let g:ale_c_clangtidy_checks = ['*', '-llvm-header-guard']
-let g:ale_cpp_gcc_options = '-std=c++14 -Wall -Wextra -Wpedantic'
-let g:ale_cpp_clang_options = '-std=c++14 -Wall -Wextra -Wpedantic'
+let g:ale_cpp_gcc_options = '-std=c++20 -Wall -Wextra -Wpedantic'
+let g:ale_cpp_clang_options = '-std=c++20 -Wall -Wextra -Wpedantic'
 let g:ale_cpp_clangtidy_checks = ['*', '-llvm-header-guard']
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
