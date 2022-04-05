@@ -250,7 +250,7 @@ nmap <Leader>at <Plug>(ale_toggle)
 if has('win32')
 	let g:OmniSharp_server_path = expand('C:/Applications/omnisharp/OmniSharp.exe')
 else
-	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp/run')
+	let g:OmniSharp_server_path = expand('$HOME/opt/omnisharp/OmniSharp')
 	let g:OmniSharp_server_use_mono = 0
 endif
 let g:OmniSharp_server_stdio = 1
