@@ -118,6 +118,7 @@ set termencoding=utf-8               " terminal encoding to UTF-8
 set textwidth=80                     " text width of 80 chars
 set ttimeoutlen=50                   " time it takes to return to normal mode
 set wildmenu                         " nice completion menu for status bar commands
+set wildoptions=pum                  " vertiacl menu for commandline completion
 if has('gui')                        " dont map gui menu keys
 	set winaltkeys=no
 endif
