@@ -16,7 +16,6 @@ Plug 'https://github.com/NLKNguyen/papercolor-theme'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/bling/vim-bufferline'
 Plug 'https://github.com/bronson/vim-trailing-whitespace'
-Plug 'https://github.com/calviken/vim-gdscript3'
 Plug 'https://github.com/cespare/vim-toml', {'for': 'toml'}
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/danilo-augusto/vim-afterglow'
