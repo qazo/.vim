@@ -14,6 +14,7 @@ Plug 'https://github.com/rakr/vim-one'
 Plug 'https://github.com/OmniSharp/omnisharp-vim'
 Plug 'https://github.com/NLKNguyen/papercolor-theme'
 Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/aklt/plantuml-syntax'
 Plug 'https://github.com/bling/vim-bufferline'
 Plug 'https://github.com/bronson/vim-trailing-whitespace'
 Plug 'https://github.com/cespare/vim-toml', {'for': 'toml'}
