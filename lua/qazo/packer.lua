@@ -36,13 +36,20 @@ local packer_startup = function(use)
 				'hrsh7th/nvim-cmp',
 				config = function()
 					local cmp = require('cmp')
+					local luasnip = require('luasnip')
+					local has_words_before = function()
+						local fn = vim.fn
+						local col = fn.col '.' -1
+						local result = col == 0 or fn.getline('.'):sub(col, col):match '%s'
+						return result
+					end
 					local cmp_config = {
 						-- completion = {
 						-- 	completeopt = 'menu,preview',
 						-- 	autocomplete = true,
 						-- },
 						snippet = {
-							expand = function(args) require('luasnip').lsp_expand(args.body) end,
+							expand = function(args) luasnip.lsp_expand(args.body) end,
 						},
 						sources = cmp.config.sources({
 							{ name = 'nvim_lsp' },
@@ -52,13 +59,31 @@ local packer_startup = function(use)
 						}),
 						mapping = {
 							['<CR>'] = cmp.mapping.confirm(),
-							['<Tab>'] = cmp.mapping.select_next_item(),
+							['<Tab>'] = function(fallback)
+								if cmp.visible() then
+									cmp.select_next_item()
+								elseif luasnip.expand_or_jumpable() then
+									luasnip.expand_or_jump()
+								elseif has_words_before() then
+									cmp.complete()
+								else
+									fallback()
+								end
+							end,
+							['<S-Tab>'] = function(fallback)
+								if cmp.visible() then
+									cmp.select_prev_item()
+								elseif luasnip.jumpable(-1) then
+									luasnip.jump(-1)
+								else
+									fallback()
+								end
+							end,
 							['<C-Space>'] = cmp.mapping.complete(),
 						},
 						window = {
 							completion = cmp.config.window.bordered(),
 							documentation = cmp.config.window.bordered(),
-							c
 						},
 					}
 					cmp.setup(cmp_config)
@@ -71,7 +96,9 @@ local packer_startup = function(use)
 			{'hrsh7th/cmp-nvim-lua'},     -- Optional
 
 			-- Snippets
-			{'L3MON4D3/LuaSnip'},             -- Required
+			{'L3MON4D3/LuaSnip', config = function()
+				require('luasnip.loaders.from_vscode').lazy_load()
+			end},             -- Required
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	})
