@@ -24,7 +24,23 @@ local startup = function(use)
 			{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},         -- Required
+			{
+				'hrsh7th/nvim-cmp',
+				config = function()
+					local cmp = require('cmp')
+					local cmp_config = {
+						snippet = {
+							expand = function(args) require('luasnip').lsp_expand(args.body) end,
+						},
+						sources = cmp.config.sources({
+							{ name = 'nvim_lsp' },
+							{ name = 'luasnip' },
+							{ name = 'buffer' },
+						}),
+					}
+					cmp.setup(cmp_config)
+				end
+			},         -- Required
 			{'hrsh7th/cmp-nvim-lsp'},     -- Required
 			{'hrsh7th/cmp-buffer'},       -- Optional
 			{'hrsh7th/cmp-path'},         -- Optional
@@ -67,6 +83,7 @@ local startup = function(use)
 				},
 				sections = {
 					lualine_a = { { 'mode', fmt = function(str) return str:sub(1, 1) end } },
+					lualine_b = { { 'branch', icons_enabled = true }, 'diff', 'diagnostics' },
 				}
 			}
 			require('lualine').setup(lualine_config)
