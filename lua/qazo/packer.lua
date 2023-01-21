@@ -20,8 +20,16 @@ local startup = function(use)
 		requires = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+			{'williamboman/mason.nvim', config = function() require('mason').setup() end},           -- Optional
+			{'williamboman/mason-lspconfig.nvim', config = function()
+				local mason_lsp = require('mason-lspconfig')
+				mason_lsp.setup()
+				mason_lsp.setup_handlers({
+					function(server_name)
+						require('lspconfig')[server_name].setup({})
+					end
+				})
+			end}, -- Optional
 
 			-- Autocompletion
 			{
