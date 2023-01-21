@@ -6,3 +6,4 @@ persist/
 autoload/plug.vim.old
 .netrwhist
 session.vim
+plugin/packer_compiled.lua
