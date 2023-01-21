@@ -13,6 +13,13 @@ augroup END
 ]]
 
 vim.cmd [[
+augroup InsertOnTermOpen
+	autocmd!
+	autocmd TermOpen * startinsert
+augroup END
+]]
+
+vim.cmd [[
 augroup FileTypes
 	autocmd!
 	autocmd BufRead,BufNewFile *.{ad,adoc} set filetype=asciidoc
