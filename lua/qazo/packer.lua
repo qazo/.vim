@@ -41,6 +41,8 @@ local startup = function(use)
 	use({ 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } })
 
 	use('tpope/vim-fugitive')
+	use('tpope/vim-surround')
+	use('tpope/vim-commentary')
 
 	use({
 		'shaunsingh/nord.nvim',
@@ -52,7 +54,24 @@ local startup = function(use)
 		end
 	})
 
-	use({'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end })
+	use({ 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end })
+
+	use({
+		'nvim-lualine/lualine.nvim',
+		config = function()
+			local lualine_config = {
+				options = {
+					icons_enabled = false,
+					section_separators = '',
+					component_separators = '',
+				},
+				sections = {
+					lualine_a = { { 'mode', fmt = function(str) return str:sub(1, 1) end } },
+				}
+			}
+			require('lualine').setup(lualine_config)
+		end
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
