@@ -43,3 +43,5 @@ vim.keymap.set('t', '<M-l>', '<C-\\><C-n><C-w><C-l>')
 vim.keymap.set('t', '<M-h>', '<C-\\><C-n><C-w><C-h>')
 vim.keymap.set('t', '<M-j>', '<C-\\><C-n><C-w><C-j>')
 vim.keymap.set('t', '<M-k>', '<C-\\><C-n><C-w><C-k>')
+
+-- lsp
