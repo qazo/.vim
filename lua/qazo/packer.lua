@@ -15,6 +15,7 @@ local packer = require('packer')
 
 local packer_startup = function(use)
 	use('wbthomason/packer.nvim')
+	use('aklt/plantuml-syntax')
 	use({
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
