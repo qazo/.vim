@@ -22,7 +22,11 @@ local packer_startup = function(use)
 		requires = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim', config = function() require('mason').setup() end},           -- Optional
+			{'williamboman/mason.nvim', config = function()
+				require('mason').setup({
+					ui = { border = 'single' }
+				})
+			end},           -- Optional
 			{'williamboman/mason-lspconfig.nvim', config = function()
 				local mason_lsp = require('mason-lspconfig')
 				local my_config = require('qazo.lspconfig')
