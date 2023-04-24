@@ -99,7 +99,7 @@ local packer_startup = function(use)
 			ensure_installed = {
 				'c', 'typescript', 'javascript',
 				'c_sharp', 'cpp', 'html',
-				'lua', 'vim', 'help',
+				'lua', 'vim',
 				'zig', 'rust', 'go',
 				'php', 'nix',
 				"cmake", 'dockerfile',
