@@ -20,6 +20,7 @@ local packer_startup = function(use)
 	use('aklt/plantuml-syntax')
 	use({
 		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v1.x',
 		requires = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
