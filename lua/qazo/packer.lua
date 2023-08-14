@@ -14,9 +14,9 @@ local packer_bootstrap = ensure_packer()
 local packer = require('packer')
 
 local packer_startup = function(use)
+	use('wbthomason/packer.nvim')
 	use('mattn/emmet-vim')
 	use('danro/rename.vim')
-	use('wbthomason/packer.nvim')
 	use('aklt/plantuml-syntax')
 	use({
 		'VonHeikemen/lsp-zero.nvim',
