@@ -25,22 +25,8 @@ local packer_startup = function(use)
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
 			{'williamboman/mason.nvim', config = function()
-				require('mason').setup({
-					ui = { border = 'single' }
-				})
 			end},           -- Optional
-			{'williamboman/mason-lspconfig.nvim', config = function()
-				local mason_lsp = require('mason-lspconfig')
-				local my_config = require('qazo.lspconfig')
-				mason_lsp.setup()
-				mason_lsp.setup_handlers({
-					function(server_name)
-						require('lspconfig')[server_name].setup({
-							on_attach = my_config.on_attach,
-						})
-					end
-				})
-			end}, -- Optional
+			{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp', config = function() require('qazo.cmp').setup() end},         -- Required
@@ -51,11 +37,10 @@ local packer_startup = function(use)
 			{'hrsh7th/cmp-nvim-lua'},     -- Optional
 
 			-- Snippets
-			{'L3MON4D3/LuaSnip', config = function()
-				require('luasnip.loaders.from_vscode').lazy_load()
-			end},             -- Required
+			{'L3MON4D3/LuaSnip'},             -- Required
 			{'rafamadriz/friendly-snippets'}, -- Optional
-		}
+		},
+		config = function() require('qazo.lspconfig').setup() end
 	})
 
 	-- telescope

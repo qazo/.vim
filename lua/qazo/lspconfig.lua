@@ -23,4 +23,23 @@ function module.on_attach(client, bufnr)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 	vim.keymap.set('n', '<Leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
+
+function module.setup()
+	require('luasnip.loaders.from_vscode').lazy_load()
+	require('mason').setup({ ui = {border = 'single'} })
+	local mason_lsp = require('mason-lspconfig')
+	mason_lsp.setup()
+	mason_lsp.setup_handlers({
+		function(server_name)
+			local config = {
+				on_attach = module.on_attach,
+			}
+			if server_name == 'lua_ls' then
+				config.settings = { Lua = { diagnostics = { globals = {'vim'} } } }
+			end
+			require('lspconfig')[server_name].setup(config)
+		end
+	})
+end
+
 return module
