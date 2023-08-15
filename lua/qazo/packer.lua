@@ -55,6 +55,11 @@ local packer_startup = function(use)
 	use('tpope/vim-surround')
 	use('tpope/vim-commentary')
 	use('tpope/vim-repeat')
+	use({'rcarriga/nvim-notify', config = function()
+		local notify = require('notify')
+		notify.setup({render = 'compact', timeout = 3000})
+		vim.notify = require('notify')
+	end})
 
 	use({ 'shaunsingh/nord.nvim', config = function()
 		vim.g.nord_italic = false
@@ -88,7 +93,7 @@ local packer_startup = function(use)
 				'lua', 'vim',
 				'zig', 'rust', 'go',
 				'php', 'nix',
-				"cmake", 'dockerfile',
+				'cmake', 'dockerfile',
 				'diff', 'python', 'sql',
 				'vue', 'svelte',
 			},
