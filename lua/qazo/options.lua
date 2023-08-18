@@ -12,6 +12,7 @@ vim.opt.sessionoptions:append { 'sesdir' }
 vim.opt.fileformat = 'unix'
 vim.opt.fileformats = 'unix,dos'
 vim.opt.splitright = true
+vim.opt.termguicolors = true
 -- vim.opt.fillchars = 'vert:┃,fold:-'
 vim.opt.ignorecase = false
 vim.opt.laststatus = 2
