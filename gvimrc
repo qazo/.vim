@@ -16,13 +16,9 @@ if has('nvim')
 	endif
 endif
 
-if has('win32')
-	if has('nvim')
-		GuiFont! Fira Code:h10
-		GuiRenderLigatures 1
-	else
-		set guifont=Hack:h10
-	endif
+if has('nvim')
+	GuiFont! Fira Code:h10
+	GuiRenderLigatures 1
 else
-	set guifont=Hack\ 10
+	set guifont=Hack:h10
 endif
