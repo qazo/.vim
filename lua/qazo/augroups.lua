@@ -13,9 +13,11 @@ augroup END
 ]]
 
 vim.cmd [[
-augroup InsertOnTermOpen
+augroup InsertOnTerm
 	autocmd!
 	autocmd TermOpen * startinsert
+	autocmd BufEnter term://* startinsert
+	autocmd BufLeave term://* stopinsert
 augroup END
 ]]
 
