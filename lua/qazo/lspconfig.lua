@@ -26,7 +26,7 @@ end
 
 function module.setup()
 	require('luasnip.loaders.from_vscode').lazy_load()
-	require('mason').setup({ ui = {border = 'single'} })
+	require('mason').setup({ ui = { border = 'single' } })
 	local mason_lsp = require('mason-lspconfig')
 	mason_lsp.setup()
 	mason_lsp.setup_handlers({
@@ -35,7 +35,7 @@ function module.setup()
 				on_attach = module.on_attach,
 			}
 			if server_name == 'lua_ls' then
-				config.settings = { Lua = { diagnostics = { globals = {'vim'} } } }
+				config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
 			end
 			require('lspconfig')[server_name].setup(config)
 		end
