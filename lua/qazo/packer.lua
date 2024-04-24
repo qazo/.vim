@@ -18,6 +18,7 @@ local packer_startup = function(use)
 	use('mattn/emmet-vim')
 	use('danro/rename.vim')
 	use('aklt/plantuml-syntax')
+	use('ziglang/zig.vim')
 	use({
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
