@@ -24,8 +24,7 @@ local packer_startup = function(use)
 		requires = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim', config = function()
-			end},           -- Optional
+			{'williamboman/mason.nvim', config = function() end},           -- Optional
 			{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
 			-- Autocompletion
@@ -47,9 +46,7 @@ local packer_startup = function(use)
 	use({ 'nvim-telescope/telescope.nvim',
 		branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} },
-		config = function()
-			require('qazo.telescope').setup()
-		end
+		config = function() require('qazo.telescope').setup() end
 	})
 
 	use('tpope/vim-fugitive')
@@ -58,16 +55,12 @@ local packer_startup = function(use)
 	use('tpope/vim-repeat')
 	use({'rcarriga/nvim-notify', config = function()
 		local notify = require('notify')
-		notify.setup({render = 'compact', timeout = 3000})
+		notify.setup({ timeout = 4000 })
 		vim.notify = require('notify')
 	end})
 
-	use({ 'shaunsingh/nord.nvim', config = function()
-		vim.g.nord_italic = false
-		vim.g.nord_borders = true
-		require('nord').set()
-		vim.cmd('colorscheme nord')
-	end })
+	use('gbprod/nord.nvim')
+	use('AlexvZyl/nordic.nvim')
 
 	use({ 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end })
 
@@ -87,26 +80,8 @@ local packer_startup = function(use)
 	end })
 
 	use({ 'nvim-treesitter/nvim-treesitter', config = function()
-		local treesitter_config = {
-			ensure_installed = {
-				'c', 'typescript', 'javascript',
-				'c_sharp', 'cpp', 'html',
-				'lua', 'vim',
-				'zig', 'rust', 'go',
-				'php', 'nix',
-				'cmake', 'dockerfile',
-				'diff', 'python', 'sql',
-				'vue', 'svelte',
-			},
-			sync_install = false,
-			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-			auto_install = true,
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-		}
-		require('nvim-treesitter.configs').setup(treesitter_config)
+		local config = { auto_install = true, highlight = { enable = true } }
+		require('nvim-treesitter.configs').setup(config)
 	end })
 
 	-- Automatically set up your configuration after cloning packer.nvim
