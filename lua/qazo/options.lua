@@ -21,3 +21,4 @@ vim.opt.foldenable = false
 vim.opt.smartcase = true
 vim.opt.textwidth = 80
 vim.opt.completeopt = { 'menu', 'menuone', 'preview' }
+vim.cmd('colorscheme nord')

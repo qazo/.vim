@@ -21,6 +21,9 @@ function module.on_attach(client, bufnr)
 	vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
 	vim.keymap.set('n', '<Leader>.', vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+	vim.keymap.set('n', '<Leader>ge', vim.diagnostic.goto_next, bufopts)
+	vim.keymap.set('n', '<Leader>gE', vim.diagnostic.goto_prev, bufopts)
+	vim.keymap.set('n', '<Leader><space>', vim.diagnostic.open_float, bufopts)
 	vim.keymap.set('n', '<Leader>F', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
