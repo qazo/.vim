@@ -45,3 +45,24 @@ vim.keymap.set('t', '<M-j>', '<C-\\><C-n><C-w><C-j>')
 vim.keymap.set('t', '<M-k>', '<C-\\><C-n><C-w><C-k>')
 
 -- lsp
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(args)
+		vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', { buf = args.buf })
+
+		local opts = { noremap = true, silent = true, buffer = args.buf }
+		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+		vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+		vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+		vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, opts)
+		vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
+		vim.keymap.set('n', '<Leader>.', vim.lsp.buf.code_action, opts)
+		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+		vim.keymap.set('n', '<Leader>ge', vim.diagnostic.goto_next, opts)
+		vim.keymap.set('n', '<Leader>gE', vim.diagnostic.goto_prev, opts)
+		vim.keymap.set('n', '<Leader><space>', vim.diagnostic.open_float, opts)
+		vim.keymap.set('n', '<Leader>F', function() vim.lsp.buf.format { async = true } end, opts)
+	end
+})
