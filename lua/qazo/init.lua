@@ -1,4 +1,5 @@
 require('qazo.options')
 require('qazo.keymaps')
 require('qazo.augroups')
+require('qazo.commands')
 require('qazo.lazy')
