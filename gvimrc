@@ -17,8 +17,12 @@ if has('nvim')
 endif
 
 if has('nvim')
-	GuiFont! Fira Code:h10
-	GuiRenderLigatures 1
+	if exists(':GuiFont')
+		GuiFont! Fira Code:h10
+	endif
+	if exists(':GuiRenderLigatures')
+		GuiRenderLigatures 1
+	endif
 else
 	set guifont=Hack:h10
 endif
