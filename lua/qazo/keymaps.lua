@@ -60,8 +60,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
 		vim.keymap.set('n', '<Leader>.', vim.lsp.buf.code_action, opts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-		vim.keymap.set('n', '<Leader>ge', vim.diagnostic.goto_next, opts)
-		vim.keymap.set('n', '<Leader>gE', vim.diagnostic.goto_prev, opts)
+		vim.keymap.set('n', '<Leader>ge', vim.diagnostic.get_next, opts)
+		vim.keymap.set('n', '<Leader>gE', vim.diagnostic.get_prev, opts)
 		vim.keymap.set('n', '<Leader><space>', vim.diagnostic.open_float, opts)
 		vim.keymap.set('n', '<Leader>F', function() vim.lsp.buf.format { async = true } end, opts)
 	end

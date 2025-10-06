@@ -20,5 +20,5 @@ require("lazy").setup({
 		{ import = "qazo.plugins" },
 	},
 	install = { colorscheme = { "habamax" } },
-	checker = { enabled = true },
+	checker = { enabled = false },
 })
